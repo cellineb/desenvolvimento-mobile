@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ConverterBits</string>
+    <string name="nome">Celline Bitencourt de Souza</string>
+    <string name="RA">1110482313019</string>
+    <string name="bits">Digite um valor em bits</string>
+    <string name="para">Escolha a conversão</string>
+    <string name="converter">Converter</string>
+</resources>
