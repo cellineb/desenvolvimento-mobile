@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
      *@author:<Celline>
      */
     private void converter() {
+        
         StringBuffer buffer = new StringBuffer();
         String valor = (String) spnConverter.getSelectedItem();
         Double bits = Double.parseDouble(edBits.getText().toString());
