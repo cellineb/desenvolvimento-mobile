@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Dados</string>
+    <string name="qntdDados">Escolha a quantidade de dados que serão lançados</string>
+    <string name="numFaces">Escolha o número de faces que os dados lançados terão</string>
+    <string name="umDado">1 dado</string>
+    <string name="doisDados">2 dados</string>
+    <string name="tresDados">3 dados</string>
+    <string name="lancar">Lançar Dados</string>
+    <string name="nome">Celline Bitencourt de Souza</string>
+    <string name="RA">1110482313019</string>
+</resources>
