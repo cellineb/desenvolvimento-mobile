@@ -30,6 +30,9 @@ public class Horista extends Professor{
         this.salario = salario;
     }
 
+    /*
+     *@author: Celline
+     */
     @Override
     public double calcSalario() {
         salario = horasAula * valorHoraAula;

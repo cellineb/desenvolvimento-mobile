@@ -16,6 +16,9 @@ import androidx.core.view.WindowInsetsCompat;
 import celline.lista05.salarioprofessores.model.Horista;
 import celline.lista05.salarioprofessores.model.Titular;
 
+/*
+ *@author: Celline
+ */
 public class MainActivity extends AppCompatActivity {
 
     private EditText etNomeP;
@@ -58,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /*
+     *@author: Celline
+     */
     private void calcular() {
         if (rbTitular.isChecked()) {
             Titular titular = new Titular();

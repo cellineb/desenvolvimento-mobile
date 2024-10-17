@@ -25,6 +25,9 @@ public class Titular extends Professor {
         this.anosInstituicao = anosInstituicao;
     }
 
+    /*
+     *@author: Celline
+     */
     @Override
     public double calcSalario() {
 

@@ -34,6 +34,9 @@ public abstract class Professor {
         this.idade = idade;
     }
 
+    /*
+     *@author: Celline
+     */
     public abstract double calcSalario();
 
 }
