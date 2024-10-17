@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SalarioProfessores</string>
+    <string name="nome">Celline Bitencourt de Souza</string>
+    <string name="RA">1110482313019</string>
+    <string name="app">Calcula Salários dos Professores</string>
+    <string name="tipoProf">Escolha o tipo do professor</string>
+    <string name="titular">Titular</string>
+    <string name="horista">Horista</string>
+    <string name="nomeP">Nome do Professor:</string>
+    <string name="matricula">Número de matrícula:</string>
+    <string name="idade">Idade do professor:</string>
+    <string name="calcular">Calcular</string>
+    <string name="seTitular">Se for titular, Digite os anos na instituição</string>
+    <string name="seHoristaHoras">Se for horista, Digite a quantidade de Horas</string>
+    <string name="seHoristaValor">Se for horista, Digite o valor da hora/aula</string>
+</resources>
