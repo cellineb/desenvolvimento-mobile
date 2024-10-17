@@ -11,8 +11,10 @@
         android:id="@+id/radioGroup2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="172dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/rbUmDado"
@@ -35,56 +37,90 @@
 
     <TextView
         android:id="@+id/tvQntdDados"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="316dp"
+        android:layout_height="73dp"
         android:text="@string/qntdDados"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="150dp" />
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.335" />
 
     <TextView
         android:id="@+id/tvFaces"
-        android:layout_width="370dp"
-        android:layout_height="20dp"
+        android:layout_width="336dp"
+        android:layout_height="60dp"
         android:text="@string/numFaces"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="65dp" />
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084" />
 
     <Spinner
         android:id="@+id/spnFaces"
         android:layout_width="150dp"
         android:layout_height="48dp"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="76dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.183" />
 
     <Button
         android:id="@+id/btnLancar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lancar"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="413dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.695" />
 
     <TextView
         android:id="@+id/tvSaida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="206dp"
-        tools:layout_editor_absoluteY="591dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.849" />
 
     <TextView
         android:id="@+id/tvNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/nome"
-        tools:layout_editor_absoluteX="11dp"
-        tools:layout_editor_absoluteY="9dp" />
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.008" />
 
     <TextView
         android:id="@+id/tvRA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/RA"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="32dp" />
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
