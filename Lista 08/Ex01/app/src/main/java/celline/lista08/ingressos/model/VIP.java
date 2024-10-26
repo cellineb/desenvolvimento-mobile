@@ -1,5 +1,8 @@
 package celline.lista08.ingressos.model;
 
+/*
+ *@author:<Celline>
+ */
 public class VIP extends Ingresso{
 
     @Override

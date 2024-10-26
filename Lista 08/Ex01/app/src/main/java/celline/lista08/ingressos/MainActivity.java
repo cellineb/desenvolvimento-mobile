@@ -24,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton rbVIP;
     private Button btnComprar;
 
+
+    /*
+     *@author:<Celline>
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
