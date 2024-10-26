@@ -13,6 +13,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+/*
+ *@author:<Celline>
+ */
 public class MainActivity extends AppCompatActivity {
 
     private RadioButton rbContaPoupanca;
@@ -32,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     @Override
+    /*
+     *@author:<Celline>
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        // EdgeToEdge.enable(this);

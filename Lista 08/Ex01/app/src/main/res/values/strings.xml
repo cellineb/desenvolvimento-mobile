@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Ingressos</string>
+    <string name="nome">Celline Bitencourt de Souza</string>
+    <string name="RA">1110482313019</string>
+    <string name="ingresso">COMPRA DE INGRESSOS</string>
+    <string name="tipo">Escolha o tipo do ingresso</string>
+    <string name="comum">Ingresso Comum</string>
+    <string name="VIP">Ingresso VIP</string>
+    <string name="comprar">Comprar</string>
+    <string name="info">Os dois ingressos são R$ 25,00. O ingresso VIP paga uma porcentagem maior da taxa de conveniência</string>
+    <string name="dados">DADOS DA COMPRA</string>
+    <string name="voltar">Voltar</string>
+</resources>
