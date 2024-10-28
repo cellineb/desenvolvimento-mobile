@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Registro</string>
+    <string name="nome">Celline Bitencourt de Souza</string>
+    <string name="RA">1110482313019</string>
+    <string name="info">Para descobrir onde o CPF foi emitido digite o número (sem traços e pontuações, somente o número) e o seu nome</string>
+    <string name="name">Nome:</string>
+    <string name="cpf">CPF</string>
+    <string name="verificar">Verificar</string>
+    <string name="voltar">Voltar</string>
 </resources>
