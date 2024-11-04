@@ -44,6 +44,7 @@ public class OutrosFragment extends Fragment {
         etRecordOutros = view.findViewById(R.id.etRecordOutros);
         btnCadastrarOutros = view.findViewById(R.id.btnCadastrarOutros);
         tvListaOutros = view.findViewById(R.id.tvListaOutros);
+        tvListaOutros.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
         btnCadastrarOutros.setOnClickListener(op -> cadastro());
 
@@ -69,5 +70,15 @@ public class OutrosFragment extends Fragment {
             buffer.append(o.toString() + "\n");
         }
 
+        tvListaOutros.setText(buffer.toString());
+        limpaCampos();
+    }
+
+    private void limpaCampos() {
+        etNomeOutros.setText("");
+        etNascOutros.setText("");
+        etBairroOutros.setText("");
+        etAcademiaOutros.setText("");
+        etRecordOutros.setText("");
     }
 }

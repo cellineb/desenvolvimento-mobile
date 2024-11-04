@@ -19,6 +19,9 @@ public class Juvenil extends Atleta {
     public String toString() {
         return "Juvenil{" +
                 "anosPraticando=" + anosPraticando +
+                "nome='" + getNome() + '\'' +
+                ", data='" + getData() + '\'' +
+                ", bairro='" + getBairro() + '\'' +
                 '}';
     }
 }

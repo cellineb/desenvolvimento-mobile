@@ -28,6 +28,9 @@ public class Outros extends Atleta{
         return "Outros{" +
                 "academia='" + academia + '\'' +
                 ", record=" + record +
+                "nome='" + getNome() + '\'' +
+                ", data='" + getData() + '\'' +
+                ", bairro='" + getBairro() + '\'' +
                 '}';
     }
 }

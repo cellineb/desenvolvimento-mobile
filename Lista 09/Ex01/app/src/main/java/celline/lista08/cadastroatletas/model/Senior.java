@@ -19,6 +19,9 @@ public class Senior extends Atleta{
     public String toString() {
         return "Senior{" +
                 "problemasCard=" + problemasCard +
+                "nome='" + getNome() + '\'' +
+                ", data='" + getData() + '\'' +
+                ", bairro='" + getBairro() + '\'' +
                 '}';
     }
 }
