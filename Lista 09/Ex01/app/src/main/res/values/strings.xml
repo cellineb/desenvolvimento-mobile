@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">CadastroAtletas</string>
+    <string name="nome">Celline Bitencourt de Souza</string>
+    <string name="RA">1110482313019</string>
+    <string name="itemJuvenil">Atleta Juvenil</string>
+    <string name="itemSenior">Atleta Sênior</string>
+    <string name="itemOutros">Outros Atletas</string>
+    <string name="nomeAtleta">Nome: </string>
+    <string name="nasc">Data de Nascimento: </string>
+    <string name="bairro">Bairro: </string>
+    <string name="anosPatricando">Anos praticando o esporte: </string>
+    <string name="problemas">Tem problema cardíaco?</string>
+    <string name="academia">Por qual academia você compete? </string>
+    <string name="record">Qual o seu record em segundos nesta prova?</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+</resources>
