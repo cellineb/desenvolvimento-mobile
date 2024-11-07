@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Figuras</string>
+    <string name="nome">Celline Bitencourt de Souza</string>
+    <string name="RA">1110482313019</string>
+    <string name="circulo">Círculo</string>
+    <string name="retangulo">Retângulo</string>
+    <string name="area">Calcular Área</string>
+    <string name="perimetro">Calcular Perímetro</string>
+    <string name="base">Base:</string>
+    <string name="altura">Altura:</string>
+    <string name="raio">Raio:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

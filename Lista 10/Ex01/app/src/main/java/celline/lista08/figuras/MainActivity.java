@@ -1,14 +1,23 @@
 package celline.lista08.figuras;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Fragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +29,59 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            carregaFragment(bundle);
+        }
+
+    }
+
+    private void carregaFragment(Bundle bundle) {
+        String tipoFigura = bundle.getString("tipoFigura");
+
+        if (tipoFigura.equals("Retangulo")) {
+            fragment = new RetanguloFragment();
+        } else {
+            fragment = new CirculoFragment();
+        }
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment, fragment);
+        fragmentTransaction.commit();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        Bundle bundle = new Bundle();
+        Intent intent = new Intent(this, MainActivity.class);
+
+        if (id == R.id.itemRetangulo) {
+            bundle.putString("tipoFigura", "Retangulo");
+
+            intent.putExtras(bundle);
+            this.startActivity(intent);
+            this.finish();
+            return true;
+        }
+
+        if (id == R.id.itemCirculo) {
+            bundle.putString("tipoFigura", "Circulo");
+
+            intent.putExtras(bundle);
+            this.startActivity(intent);
+            this.finish();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
