@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TimeJogador</string>
+    <string name="nome">Celline Bitencourt de Souza</string>
+    <string name="RA">1110482313019</string>
+    <string name="time">Time</string>
+    <string name="jogador">Jogador</string>
+    <string name="inicio">App cadastro de time e jogadores</string>
+</resources>
