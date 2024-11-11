@@ -5,6 +5,9 @@ import java.util.List;
 
 import celline.lista08.cadastroatletas.model.Juvenil;
 
+/*
+*@author: Celline
+*/
 public class OperacaoJuvenil implements IOperacao<Juvenil> {
 
     private List<Juvenil> lista;
