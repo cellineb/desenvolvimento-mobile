@@ -1,5 +1,8 @@
 package celline.lista08.cadastroatletas.model;
 
+/*
+*@author: Celline
+*/
 public class Juvenil extends Atleta {
 
     private int anosPraticando;
