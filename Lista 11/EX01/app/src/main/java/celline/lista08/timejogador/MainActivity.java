@@ -11,10 +11,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Fragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +30,28 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null){
+            carregaFragment(bundle);
+        } else {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragment, new InicioFragment());
+            fragmentTransaction.commit();
+        }
+
+    }
+
+    private void carregaFragment(Bundle bundle) {
+        String tipo = bundle.getString("tipo");
+        if (tipo.equals("jogador")){
+            fragment = new JogadorFragment();
+        } else {
+            fragment = new TimeFragment();
+        }
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment, new InicioFragment());
+        fragmentTransaction.replace(R.id.fragment, fragment);
         fragmentTransaction.commit();
     }
 

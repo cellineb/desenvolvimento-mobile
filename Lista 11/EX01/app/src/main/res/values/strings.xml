@@ -5,4 +5,15 @@
     <string name="time">Time</string>
     <string name="jogador">Jogador</string>
     <string name="inicio">App cadastro de time e jogadores</string>
+    <string name="cod">Código</string>
+    <string name="nomej">Nome</string>
+    <string name="nasc">Data de nascimento</string>
+    <string name="altura">Altura</string>
+    <string name="peso">Peso</string>
+    <string name="buscar">Buscar</string>
+    <string name="inserir">Inserir</string>
+    <string name="editar">Editar</string>
+    <string name="excluir">Excluir</string>
+    <string name="listar">Listar</string>
+    <string name="cidade">Cidade</string>
 </resources>
