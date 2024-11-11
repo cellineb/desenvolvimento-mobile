@@ -9,12 +9,14 @@ import android.database.sqlite.SQLiteDatabase;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import celline.lista08.timejogador.model.Jogador;
 import celline.lista08.timejogador.model.Time;
 
+/*
+ *@author: Celline
+ */
 public class JogadorDao implements IJogadorDao, ICRUDDao<Jogador> {
 
     private final Context context;
@@ -86,7 +88,7 @@ public class JogadorDao implements IJogadorDao, ICRUDDao<Jogador> {
 
     @SuppressLint("Range")
     @Override
-    public List<Jogador> findAll(Jogador jogador) throws SQLException {
+    public List<Jogador> findAll() throws SQLException {
         List<Jogador> jogadores = new ArrayList<>();
         String sql = "SELECT t.codigo AS cod_time, t.nome AS nome_time, t.cidade AS cidade_time, " +
                 "j.id, j.nome, j.dataNasc, j.altura, j.peso " +

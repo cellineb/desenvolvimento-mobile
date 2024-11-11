@@ -1,5 +1,8 @@
 package celline.lista08.timejogador.model;
 
+/*
+ *@author: Celline
+ */
 public class Time {
 
     private int codigo;

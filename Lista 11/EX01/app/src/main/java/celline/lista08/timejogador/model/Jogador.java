@@ -2,6 +2,9 @@ package celline.lista08.timejogador.model;
 
 import java.time.LocalDate;
 
+/*
+ *@author: Celline
+ */
 public class Jogador {
 
     private int id;
@@ -11,7 +14,7 @@ public class Jogador {
     private float peso;
     private Time codTime;
 
-    public Jogador(int id, String nome, LocalDate dataNasc, float altura, float peso, Time codTime) {
+    public Jogador() {
         this.id = id;
         this.nome = nome;
         this.dataNasc = dataNasc;

@@ -8,11 +8,13 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import celline.lista08.timejogador.model.Time;
 
+/*
+ *@author: Celline
+ */
 public class TimeDao implements ITimeDao, ICRUDDao<Time> {
 
     private final Context context;
@@ -71,7 +73,7 @@ public class TimeDao implements ITimeDao, ICRUDDao<Time> {
 
     @SuppressLint("Range")
     @Override
-    public List<Time> findAll(Time time) throws SQLException {
+    public List<Time> findAll() throws SQLException {
         List<Time> times = new ArrayList<>();
         String sql = "SELECT nome, codigo, cidade FROM time";
         Cursor cursor = database.rawQuery(sql, null);
