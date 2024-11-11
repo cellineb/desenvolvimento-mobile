@@ -1,10 +1,13 @@
 package celline.lista08.timejogador.persistence;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -40,8 +43,8 @@ public class TimeDao implements ITimeDao, ICRUDDao<Time> {
     @Override
     public int update(Time time) throws SQLException {
         ContentValues contentValues = getContentValues(time);
-        database.update("time", contentValues, "codigo =" + time.getCodigo(), null);
-        return 0;
+        int ret = database.update("time", contentValues, "codigo =" + time.getCodigo(), null);
+        return ret;
     }
 
     @Override
@@ -49,14 +52,43 @@ public class TimeDao implements ITimeDao, ICRUDDao<Time> {
         database.delete("time", "codigo =" + time.getCodigo(), null);
     }
 
+    @SuppressLint("Range")
     @Override
     public Time findOne(Time time) throws SQLException {
-        return null;
+        String sql = "SELECT nome, codigo, cidade FROM time WHERE codigo = " + time.getCodigo();
+        Cursor cursor = database.rawQuery(sql, null);
+        if (cursor != null){
+            cursor.moveToFirst();
+        }
+        if (!cursor.isAfterLast()){
+            time.setCodigo(cursor.getInt(cursor.getColumnIndex("codigo")));
+            time.setNome(cursor.getString(cursor.getColumnIndex("nome")));
+            time.setCidade(cursor.getString(cursor.getColumnIndex("cidade")));
+        }
+        cursor.close();
+        return time;
     }
 
+    @SuppressLint("Range")
     @Override
     public List<Time> findAll(Time time) throws SQLException {
-        return Collections.emptyList();
+        List<Time> times = new ArrayList<>();
+        String sql = "SELECT nome, codigo, cidade FROM time";
+        Cursor cursor = database.rawQuery(sql, null);
+        if (cursor != null){
+            cursor.moveToFirst();
+        }
+        while (!cursor.isAfterLast()){
+            Time t = new Time();
+            t.setCodigo(cursor.getInt(cursor.getColumnIndex("codigo")));
+            t.setNome(cursor.getString(cursor.getColumnIndex("nome")));
+            t.setCidade(cursor.getString(cursor.getColumnIndex("cidade")));
+
+            times.add(t);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return times;
     }
 
     public static ContentValues getContentValues(Time time){

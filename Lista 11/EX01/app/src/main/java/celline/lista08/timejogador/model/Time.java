@@ -6,7 +6,7 @@ public class Time {
     private String nome;
     private String cidade;
 
-    public Time(int codigo, String nome, String cidade) {
+    public Time() {
         this.codigo = codigo;
         this.nome = nome;
         this.cidade = cidade;
