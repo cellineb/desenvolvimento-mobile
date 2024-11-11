@@ -5,6 +5,9 @@ import java.util.List;
 
 import celline.lista08.cadastroatletas.model.Senior;
 
+/*
+*@author: Celline
+*/
 public class OperacaoSenior implements IOperacao<Senior>{
 
     private List<Senior> lista;
