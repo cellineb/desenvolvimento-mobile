@@ -138,7 +138,7 @@ public class CompromissosFragment extends Fragment {
         Compromissos c = new Compromissos();
         c.setId(Integer.parseInt(etIdC.getText().toString()));
         c.setNome(etNomeC.getText().toString());
-        c.setData(Float.parseFloat(etDataC.getText().toString()));
+        c.setData(etDataC.getText().toString());
         c.setHora(etHoraC.getText().toString());
         c.setObs(etObservacoesC.getText().toString());
 

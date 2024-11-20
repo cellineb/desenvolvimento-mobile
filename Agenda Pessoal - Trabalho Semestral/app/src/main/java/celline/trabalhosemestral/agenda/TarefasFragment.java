@@ -162,7 +162,7 @@ public class TarefasFragment extends Fragment {
         Tarefas t = new Tarefas();
         t.setId(Integer.parseInt(etIdT.getText().toString()));
         t.setNome(etNomeT.getText().toString());
-        t.setData(Float.parseFloat(etDataT.getText().toString()));
+        t.setData(etDataT.getText().toString());
         t.setHora(etHoraT.getText().toString());
         t.setTipoTarefa(etTipoT.getText().toString());
         t.setTipoTarefa(String.valueOf((Disciplina) spn.getSelectedItem()));

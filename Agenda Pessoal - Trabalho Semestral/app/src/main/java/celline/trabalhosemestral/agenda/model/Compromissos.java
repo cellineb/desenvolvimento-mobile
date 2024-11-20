@@ -4,7 +4,7 @@ public class Compromissos {
 
     private int id;
     private String nome;
-    private float data;
+    private String data;
     private String hora;
     private String obs;
 
@@ -30,10 +30,10 @@ public class Compromissos {
         this.nome = nome;
     }
 
-    public float getData() {
+    public String getData() {
         return data;
     }
-    public void setData(float data) {
+    public void setData(String data) {
         this.data = data;
     }
 

@@ -73,7 +73,7 @@ public class CompromissosDao implements ICompromissosDao, ICRUDDao<Compromissos>
 
             compromissos.setId(cursor.getInt(cursor.getInt(Integer.parseInt("id"))));
             compromissos.setNome(cursor.getString(cursor.getColumnIndex("nome")));
-            compromissos.setData(cursor.getFloat(cursor.getColumnIndex("data")));
+            compromissos.setData(cursor.getString(cursor.getColumnIndex("data")));
             compromissos.setHora(cursor.getString(cursor.getColumnIndex("hora")));
             compromissos.setObs(cursor.getString(cursor.getColumnIndex("obs")));
         }
@@ -97,7 +97,7 @@ public class CompromissosDao implements ICompromissosDao, ICRUDDao<Compromissos>
 
             c.setId(cursor.getInt(cursor.getInt(Integer.parseInt("id"))));
             c.setNome(cursor.getString(cursor.getColumnIndex("nome")));
-            c.setData(cursor.getFloat(cursor.getColumnIndex("data")));
+            c.setData(cursor.getString(cursor.getColumnIndex("data")));
             c.setHora(cursor.getString(cursor.getColumnIndex("hora")));
             c.setObs(cursor.getString(cursor.getColumnIndex("obs")));
 

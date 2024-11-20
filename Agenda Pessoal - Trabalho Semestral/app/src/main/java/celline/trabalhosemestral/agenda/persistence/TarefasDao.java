@@ -71,7 +71,7 @@ public class TarefasDao implements ITarefasDao, ICRUDDao<Tarefas> {
 
             tarefas.setId(cursor.getInt(cursor.getInt(Integer.parseInt("id"))));
             tarefas.setNome(cursor.getString(cursor.getColumnIndex("nome")));
-            tarefas.setData(cursor.getFloat(cursor.getColumnIndex("data")));
+            tarefas.setData(cursor.getString(cursor.getColumnIndex("data")));
             tarefas.setHora(cursor.getString(cursor.getColumnIndex("hora")));
             tarefas.setTipoTarefa(cursor.getString(cursor.getColumnIndex("tipoTarefa")));
         }
@@ -95,7 +95,7 @@ public class TarefasDao implements ITarefasDao, ICRUDDao<Tarefas> {
 
             t.setId(cursor.getInt(cursor.getInt(Integer.parseInt("id"))));
             t.setNome(cursor.getString(cursor.getColumnIndex("nome")));
-            t.setData(cursor.getFloat(cursor.getColumnIndex("data")));
+            t.setData(cursor.getString(cursor.getColumnIndex("data")));
             t.setHora(cursor.getString(cursor.getColumnIndex("hora")));
             t.setTipoTarefa(cursor.getString(cursor.getColumnIndex("tipoTarefa")));
 

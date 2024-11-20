@@ -4,7 +4,7 @@ public class Tarefas {
 
     private int id;
     private String nome;
-    private float data;
+    private String data;
     private String hora;
     private String tipoTarefa;
     private Disciplina disciplina;
@@ -32,10 +32,10 @@ public class Tarefas {
         this.nome = nome;
     }
 
-    public float getData() {
+    public String getData() {
         return data;
     }
-    public void setData(float data) {
+    public void setData(String data) {
         this.data = data;
     }
 

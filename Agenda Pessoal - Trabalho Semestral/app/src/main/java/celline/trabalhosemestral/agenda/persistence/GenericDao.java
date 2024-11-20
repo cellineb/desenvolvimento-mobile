@@ -12,14 +12,14 @@ public class GenericDao extends SQLiteOpenHelper {
             "CREATE TABLE compromissos (" +
                     "id INT NOT NULL PRIMARY KEY," +
                     "nome VARCHAR(80) NOT NULL," +
-                    "data DATE NOT NULL," +
+                    "data CHAR(10) NOT NULL," +
                     "hora TIME NOT NULL," +
                     "obs VARCHAR(120));";
     private static final String CREATE_TABLE_TAREFAS =
             "CREATE TABLE tarefas (" +
                     "id INT NOT NULL PRIMARY KEY," +
                     "nome VARCHAR(100) NOT NULL," +
-                    "data DATE NOT NULL," +
+                    "data CHAR(10) NOT NULL," +
                     "hora TIME NOT NULL," +
                     "tipoTarefa VARCHAR(20));";
     private static final String CREATE_TABLE_DISCIPLINAS =
