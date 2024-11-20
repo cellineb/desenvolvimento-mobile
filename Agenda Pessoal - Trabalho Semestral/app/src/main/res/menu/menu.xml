@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itemCompromissos"
+        android:title="@string/compromissos" />
+    <item
+        android:id="@+id/itemTarefas"
+        android:title="@string/tarefas" />
+    <item
+        android:id="@+id/itemDisciplinas"
+        android:title="@string/disciplina" />
+</menu>

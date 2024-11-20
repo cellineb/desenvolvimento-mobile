@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Agenda</string>
+    <string name="nome">Celline Bitencourt de Souza</string>
+    <string name="RA">1110482313019</string>
+    <string name="compromissos">Cadastro de compromissos</string>
+    <string name="nomeC">Nome</string>
+    <string name="data">Data</string>
+    <string name="hora">Horário</string>
+    <string name="obs">Observação</string>
+    <string name="buscar">Buscar</string>
+    <string name="inserir">Inserir</string>
+    <string name="editar">Editar</string>
+    <string name="excluir">Excluir</string>
+    <string name="listar">Listar</string>
+    <string name="id">Id</string>
+    <string name="titulo">Aplicativo de Agenda pessoal, focado em estudantes, com o intuito de ajudar na organização de tarefas e compromissos</string>
+    <string name="tarefas">Cadastro de Tarefas e Entregas</string>
+    <string name="explicacao">Clique no menu das três bolinhas para cadastrar, editar, buscar, excluir ou listar seus compromissos, tarefas e disciplinas</string>
+    <string name="info">Para cadastrar uma tarefa é necessário cadastrar uma disciplina antes</string>
+    <string name="importante">Importante:</string>
+    <string name="dtEntrega">Data da entrega</string>
+    <string name="hrEntrega">Horário da entrega</string>
+    <string name="disciplina">Cadastro de Disciplinas</string>
+    <string name="tipo">Tipo da Tarefa (prova, trabalho etc)</string>
+
+</resources>

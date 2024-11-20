@@ -42,7 +42,7 @@ public class JogadorDao implements IJogadorDao, ICRUDDao<Jogador> {
     @Override
     public void insert(Jogador jogador) throws SQLException {
         ContentValues contentValues = getContentValues(jogador);
-        database.insert("time", null, contentValues);
+        database.insert("jogador", null, contentValues);
     }
 
     @Override
