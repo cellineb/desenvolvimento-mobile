@@ -20,9 +20,9 @@ public class GenericDao extends SQLiteOpenHelper {
             "CREATE TABLE jogador (" +
                     "id INT NOT NULL PRIMARY KEY," +
                     "nome VARCHAR(100) NOT NULL," +
-                    "dataNasc DATE NOT NULL," +
-                    "altura FLOAT NOT NULL," +
-                    "peso FLOAT NOT NULL," +
+                    "dataNasc CHAR(10) NOT NULL," +
+                    "altura CHAR(5) NOT NULL," +
+                    "peso CHAR(5) NOT NULL," +
                     "codTime INT NOT NULL," +
                     "FOREIGN KEY (codTime) REFERENCES time(codigo));";
 

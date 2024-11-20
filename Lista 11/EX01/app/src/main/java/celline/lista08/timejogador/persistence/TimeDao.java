@@ -38,25 +38,32 @@ public class TimeDao implements ITimeDao, ICRUDDao<Time> {
 
     @Override
     public void insert(Time time) throws SQLException {
+        open();
         ContentValues contentValues = getContentValues(time);
         database.insert("time", null, contentValues);
+        close();
     }
 
     @Override
     public int update(Time time) throws SQLException {
+        open();
         ContentValues contentValues = getContentValues(time);
         int ret = database.update("time", contentValues, "codigo =" + time.getCodigo(), null);
+        close();
         return ret;
     }
 
     @Override
     public void delete(Time time) throws SQLException {
+        open();
         database.delete("time", "codigo =" + time.getCodigo(), null);
+        close();
     }
 
     @SuppressLint("Range")
     @Override
     public Time findOne(Time time) throws SQLException {
+        open();
         String sql = "SELECT nome, codigo, cidade FROM time WHERE codigo = " + time.getCodigo();
         Cursor cursor = database.rawQuery(sql, null);
         if (cursor != null){
@@ -68,12 +75,14 @@ public class TimeDao implements ITimeDao, ICRUDDao<Time> {
             time.setCidade(cursor.getString(cursor.getColumnIndex("cidade")));
         }
         cursor.close();
+        close();
         return time;
     }
 
     @SuppressLint("Range")
     @Override
     public List<Time> findAll() throws SQLException {
+        open();
         List<Time> times = new ArrayList<>();
         String sql = "SELECT nome, codigo, cidade FROM time";
         Cursor cursor = database.rawQuery(sql, null);
@@ -90,6 +99,7 @@ public class TimeDao implements ITimeDao, ICRUDDao<Time> {
             cursor.moveToNext();
         }
         cursor.close();
+        close();
         return times;
     }
 

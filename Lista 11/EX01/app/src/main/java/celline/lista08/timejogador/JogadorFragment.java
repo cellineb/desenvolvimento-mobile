@@ -160,9 +160,9 @@ public class JogadorFragment extends Fragment {
         Jogador jogador = new Jogador();
         jogador.setId(Integer.parseInt(etCodJ.getText().toString()));
         jogador.setNome(etNomeJ.getText().toString());
-        jogador.setDataNasc(LocalDate.parse(etNascJ.getText().toString()));
-        jogador.setAltura(Float.parseFloat(etAlturaJ.getText().toString()));
-        jogador.setPeso(Float.parseFloat(etPesoJ.getText().toString()));
+        jogador.setDataNasc(etNascJ.getText().toString());
+        jogador.setAltura(etAlturaJ.getText().toString());
+        jogador.setPeso(etPesoJ.getText().toString());
         jogador.setCodTime((Time) spnTimeJ.getSelectedItem());
 
         return jogador;
@@ -172,8 +172,8 @@ public class JogadorFragment extends Fragment {
         etCodJ.setText(jogador.getId());
         etNomeJ.setText(jogador.getNome());
         etNascJ.setText(jogador.getDataNasc().toString());
-        etAlturaJ.setText((int) jogador.getAltura());
-        etPesoJ.setText((int) jogador.getPeso());
+        etAlturaJ.setText(jogador.getAltura());
+        etPesoJ.setText(jogador.getPeso());
 
         int cont = 1;
         for (Time t : times){

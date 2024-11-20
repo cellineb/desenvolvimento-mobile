@@ -9,9 +9,9 @@ public class Jogador {
 
     private int id;
     private String nome;
-    private LocalDate dataNasc;
-    private float altura;
-    private float peso;
+    private String dataNasc;
+    private String altura;
+    private String peso;
     private Time codTime;
 
     public Jogador() {
@@ -37,17 +37,17 @@ public class Jogador {
         this.nome = nome;
     }
 
-    public float getAltura() {
+    public String getAltura() {
         return altura;
     }
-    public void setAltura(float altura) {
+    public void setAltura(String altura) {
         this.altura = altura;
     }
 
-    public LocalDate getDataNasc() {
+    public String getDataNasc() {
         return dataNasc;
     }
-    public void setDataNasc(LocalDate dataNasc) {
+    public void setDataNasc(String dataNasc) {
         this.dataNasc = dataNasc;
     }
 
@@ -58,10 +58,10 @@ public class Jogador {
         this.codTime = codTime;
     }
 
-    public float getPeso() {
+    public String getPeso() {
         return peso;
     }
-    public void setPeso(float peso) {
+    public void setPeso(String peso) {
         this.peso = peso;
     }
 

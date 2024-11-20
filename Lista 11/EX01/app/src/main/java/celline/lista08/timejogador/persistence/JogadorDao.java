@@ -41,25 +41,32 @@ public class JogadorDao implements IJogadorDao, ICRUDDao<Jogador> {
 
     @Override
     public void insert(Jogador jogador) throws SQLException {
+        open();
         ContentValues contentValues = getContentValues(jogador);
         database.insert("jogador", null, contentValues);
+        close();
     }
 
     @Override
     public int update(Jogador jogador) throws SQLException {
+        open();
         ContentValues contentValues = getContentValues(jogador);
         int ret = database.update("jogador", contentValues, "codigo =" + jogador.getId(), null);
+        close();
         return ret;
     }
 
     @Override
     public void delete(Jogador jogador) throws SQLException {
+        open();
         database.delete("jogador", "codigo =" + jogador.getId(), null);
+        close();
     }
 
     @SuppressLint("Range")
     @Override
     public Jogador findOne(Jogador jogador) throws SQLException {
+        open();
         String sql = "SELECT t.codigo AS cod_time, t.nome AS nome_time, t.cidade AS cidade_time, " +
                 "j.id, j.nome, j.dataNasc, j.altura, j.peso " +
                 "FROM time t, jogador j " +
@@ -77,18 +84,20 @@ public class JogadorDao implements IJogadorDao, ICRUDDao<Jogador> {
 
             jogador.setId(cursor.getInt(cursor.getColumnIndex("id")));
             jogador.setNome(cursor.getString(cursor.getColumnIndex("nome")));
-            jogador.setDataNasc(LocalDate.parse(cursor.getString(cursor.getColumnIndex("dataNasc"))));
-            jogador.setAltura(cursor.getFloat(cursor.getColumnIndex("altura")));
-            jogador.setPeso(cursor.getFloat(cursor.getColumnIndex("peso")));
+            jogador.setDataNasc(cursor.getString(cursor.getColumnIndex("dataNasc")));
+            jogador.setAltura(cursor.getString(cursor.getColumnIndex("altura")));
+            jogador.setPeso(cursor.getString(cursor.getColumnIndex("peso")));
             jogador.setCodTime(time);
         }
         cursor.close();
+        close();
         return jogador;
     }
 
     @SuppressLint("Range")
     @Override
     public List<Jogador> findAll() throws SQLException {
+        open();
         List<Jogador> jogadores = new ArrayList<>();
         String sql = "SELECT t.codigo AS cod_time, t.nome AS nome_time, t.cidade AS cidade_time, " +
                 "j.id, j.nome, j.dataNasc, j.altura, j.peso " +
@@ -107,15 +116,16 @@ public class JogadorDao implements IJogadorDao, ICRUDDao<Jogador> {
 
             j.setId(cursor.getInt(cursor.getColumnIndex("id")));
             j.setNome(cursor.getString(cursor.getColumnIndex("nome")));
-            j.setDataNasc(LocalDate.parse(cursor.getString(cursor.getColumnIndex("dataNasc"))));
-            j.setAltura(cursor.getFloat(cursor.getColumnIndex("altura")));
-            j.setPeso(cursor.getFloat(cursor.getColumnIndex("peso")));
+            j.setDataNasc(cursor.getString(cursor.getColumnIndex("dataNasc")));
+            j.setAltura(cursor.getString(cursor.getColumnIndex("altura")));
+            j.setPeso(cursor.getString(cursor.getColumnIndex("peso")));
             j.setCodTime(time);
 
             jogadores.add(j);
             cursor.moveToNext();
         }
         cursor.close();
+        close();
         return jogadores;
     }
 

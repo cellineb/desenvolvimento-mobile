@@ -38,10 +38,6 @@ public class Time {
 
     @Override
     public String toString() {
-        return "Time{" +
-                "codigo=" + codigo +
-                ", nome='" + nome + '\'' +
-                ", cidade='" + cidade + '\'' +
-                '}';
+        return getCodigo() + " - " + getNome();
     }
 }
