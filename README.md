@@ -9,4 +9,4 @@ Lista 08 - EX01 (Compra de Ingressos): https://drive.google.com/file/d/1pb9skWtn
 Lista 08 - EX02 (Local de registro do CPF): https://drive.google.com/file/d/1VIVV-CdN50ihuwf0aK7HjwhV1YHpqfio/view?usp=sharing <br>
 Lista 09 - EX01 (Cadastro de Atletas): https://drive.google.com/file/d/11bR9a5lDKMadLI1fd3L9UTO-ohiyqZdL/view?usp=sharing <br>
 Lista 10 - EX01 (Area e Perimetro de figuras): https://drive.google.com/file/d/1tTiN34kujXsCx6GvjxmqMeHGQCjjiIsT/view?usp=sharing <br>
-Lista 11 e 12 - (Cadastro de Jogadores e Time): https://drive.google.com/file/d/1tuKcpH-yTlBlL4xtsRbCGhMGJjANIC6c/view?usp=sharing <br>
+Lista 11 e 12 - (Cadastro de Jogadores e Time): https://drive.google.com/file/d/13gxTlBTA6_YvsBMJTw59ui7uHK4zU6Fy/view?usp=sharing <br>
