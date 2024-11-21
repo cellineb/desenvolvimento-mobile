@@ -22,5 +22,6 @@
     <string name="hrEntrega">Horário da entrega</string>
     <string name="disciplina">Cadastro de Disciplinas</string>
     <string name="tipo">Tipo da Tarefa (prova, trabalho etc)</string>
+    <string name="inicial">Tela inicial</string>
 
 </resources>

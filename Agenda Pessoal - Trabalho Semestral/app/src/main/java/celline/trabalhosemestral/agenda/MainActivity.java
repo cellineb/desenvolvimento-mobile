@@ -57,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
+        } else {
+            fragment = new InicioFragment();
         }
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -100,7 +101,12 @@ public class MainActivity extends AppCompatActivity {
             catch (Exception e){
                 e.printStackTrace();
             }
-
+        } else {
+            bundle.putString("tipo", "inicio");
+            intent.putExtras(bundle);
+            this.startActivity(intent);
+            this.finish();
+            return true;
         }
         return true;
     }
