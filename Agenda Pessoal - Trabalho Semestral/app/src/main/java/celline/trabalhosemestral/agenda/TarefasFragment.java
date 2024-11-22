@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,7 +49,7 @@ public class TarefasFragment extends Fragment {
     private DisciplinaController dCont;
     private List tipoTarefas;
     private Spinner spn;
-    private List<Disciplina> lista;
+    private List<Disciplina> disciplinas;
 
     public TarefasFragment() {
         super();
@@ -92,6 +93,7 @@ public class TarefasFragment extends Fragment {
             Tarefas tarefa = montaTarefa();
             try {
                 tCont.inserir(tarefa);
+                Log.i("MainActivity", "inserido");
                 Toast.makeText(view.getContext(), "Tarefa Cadastrada com Sucesso!", Toast.LENGTH_LONG).show();
             } catch (SQLException e) {
                 Toast.makeText(view.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
@@ -108,6 +110,7 @@ public class TarefasFragment extends Fragment {
             Tarefas tarefa = montaTarefa();
             try {
                 tCont.editar(tarefa);
+                Log.i("MainActivity", "editado");
                 Toast.makeText(view.getContext(), "Tarefa Editada com Sucesso!", Toast.LENGTH_LONG).show();
             } catch (SQLException e) {
                 Toast.makeText(view.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
@@ -119,10 +122,12 @@ public class TarefasFragment extends Fragment {
     }
 
     private void excluir() {
-        Tarefas tarefa = montaTarefa();
+        Tarefas tarefas = new Tarefas();
+        tarefas = montaTarefa();
         try {
-            tCont.inserir(tarefa);
-            Toast.makeText(view.getContext(), "Tarefa Excluída com Sucesso!", Toast.LENGTH_LONG).show();
+            tCont.excluir(tarefas);
+            Log.i("MainActivity", "excluida");
+            Toast.makeText(view.getContext(), "Disciplina Excluída com Sucesso!", Toast.LENGTH_LONG).show();
         } catch (SQLException e) {
             Toast.makeText(view.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
         }
@@ -132,7 +137,7 @@ public class TarefasFragment extends Fragment {
     private void buscar() {
         Tarefas tarefa = montaTarefa();
         try {
-            lista = dCont.listar();
+            disciplinas = dCont.listar();
             tarefa = tCont.buscar(tarefa);
             if (tarefa.getNome() != null){
                 preencheCampos(tarefa);
@@ -148,6 +153,7 @@ public class TarefasFragment extends Fragment {
     private void listar() {
         try {
             List<Tarefas> tarefas = tCont.listar();
+            Log.i("MainActivity", "lista");
             StringBuffer buffer = new StringBuffer();
             for (Tarefas t : tarefas){
                 buffer.append(t.toString() + "\n");
@@ -165,13 +171,12 @@ public class TarefasFragment extends Fragment {
         t.setData(etDataT.getText().toString());
         t.setHora(etHoraT.getText().toString());
         t.setTipoTarefa(etTipoT.getText().toString());
-        t.setTipoTarefa(String.valueOf((Disciplina) spn.getSelectedItem()));
+        t.setDisciplina((Disciplina) spn.getSelectedItem());
 
         return t;
     }
 
     private void preencheCampos(Tarefas tarefa) {
-
         etIdT.setId(tarefa.getId());
         etNomeT.setText(tarefa.getNome());
         etDataT.setText(String.valueOf(tarefa.getData()));
@@ -179,21 +184,21 @@ public class TarefasFragment extends Fragment {
         etTipoT.setText(tarefa.getTipoTarefa());
 
         int cont = 1;
-        for (Disciplina d : lista){
+        for (Disciplina d : disciplinas){
             if (d.getId() == tarefa.getDisciplina().getId()){
                 spn.setSelection(cont);
             } else {
                 cont++;
             }
         }
-        if (cont > lista.size()){
+        if (cont > disciplinas.size()){
             spn.setSelection(0);
         }
 
     }
 
     private void limpaCampos() {
-        etIdT.setId(Integer.parseInt(""));
+        etIdT.setText("");
         etNomeT.setText("");
         etDataT.setText("");
         etHoraT.setText("");
@@ -204,13 +209,13 @@ public class TarefasFragment extends Fragment {
     private void preencheSpinner() {
         Disciplina d0 = new Disciplina();
         d0.setId(0);
-        d0.setNome("Selecione uma Disciplina");
+        d0.setNome("Selecione uma disciplina");
 
         try {
-            lista = dCont.listar();
-            lista.add(0, d0);
+            disciplinas = dCont.listar();
+            disciplinas.add(0, d0);
 
-            ArrayAdapter ad = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, lista);
+            ArrayAdapter ad = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, disciplinas);
             ad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spn.setAdapter(ad);
         } catch (SQLException e) {

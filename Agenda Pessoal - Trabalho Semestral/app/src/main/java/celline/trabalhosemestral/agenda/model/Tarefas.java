@@ -62,13 +62,11 @@ public class Tarefas {
 
     @Override
     public String toString() {
-        return "Tarefas{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", data=" + data +
-                ", hora='" + hora + '\'' +
-                ", tipoTarefa='" + tipoTarefa + '\'' +
-                ", disciplina= '" + disciplina + '\'' +
-                '}';
+        return  "id = " + getId() +
+                "\nnome = " + getNome() +
+                "\ndata = " + getData() +
+                "\nhora = " + getHora() +
+                "\ntipoTarefa = " + getTipoTarefa() +
+                "\ndisciplina = " + getDisciplina() + "\n";
     }
 }

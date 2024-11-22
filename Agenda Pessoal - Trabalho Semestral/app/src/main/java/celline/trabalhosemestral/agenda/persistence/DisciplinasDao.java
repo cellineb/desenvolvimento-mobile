@@ -85,22 +85,25 @@ public class DisciplinasDao implements IDisciplinasDao, ICRUDDao<Disciplina> {
         List<Disciplina> disciplinas = new ArrayList<>();
         String sql = "SELECT * FROM disciplinas";
         Cursor cursor = database.rawQuery(sql, null);
-        if (cursor != null){
-            cursor.moveToFirst();
-        }
-        if (!cursor.isAfterLast()){
-            Disciplina d = new Disciplina();
 
-            d.setId(cursor.getInt(cursor.getInt(cursor.getColumnIndex("id"))));
-            d.setNome(cursor.getString(cursor.getColumnIndex("nome")));
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                Disciplina d = new Disciplina();
 
-            disciplinas.add(d);
-            cursor.moveToNext();
+                d.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                d.setNome(cursor.getString(cursor.getColumnIndex("nome")));
+
+                disciplinas.add(d);
+            } while (cursor.moveToNext());
         }
-        cursor.close();
+
+        if (cursor != null) {
+            cursor.close();
+        }
         close();
         return disciplinas;
     }
+
 
     private ContentValues getContentValues(Disciplina disciplina) {
         ContentValues contentValues = new ContentValues();

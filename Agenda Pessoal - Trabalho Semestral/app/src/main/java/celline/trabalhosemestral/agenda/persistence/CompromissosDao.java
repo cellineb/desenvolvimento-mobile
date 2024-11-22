@@ -13,6 +13,7 @@ import java.util.Collections;
 import java.util.List;
 
 import celline.trabalhosemestral.agenda.model.Compromissos;
+import celline.trabalhosemestral.agenda.model.Disciplina;
 
 public class CompromissosDao implements ICompromissosDao, ICRUDDao<Compromissos> {
 
@@ -71,7 +72,7 @@ public class CompromissosDao implements ICompromissosDao, ICRUDDao<Compromissos>
         }
         if (!cursor.isAfterLast()){
 
-            compromissos.setId(cursor.getInt(cursor.getInt(Integer.parseInt("id"))));
+            compromissos.setId(cursor.getInt(cursor.getColumnIndex("id")));
             compromissos.setNome(cursor.getString(cursor.getColumnIndex("nome")));
             compromissos.setData(cursor.getString(cursor.getColumnIndex("data")));
             compromissos.setHora(cursor.getString(cursor.getColumnIndex("hora")));
@@ -89,22 +90,24 @@ public class CompromissosDao implements ICompromissosDao, ICRUDDao<Compromissos>
         List<Compromissos> compromissos = new ArrayList<>();
         String sql = "SELECT * FROM compromissos";
         Cursor cursor = database.rawQuery(sql, null);
-        if (cursor != null){
-            cursor.moveToFirst();
-        }
-        if (!cursor.isAfterLast()){
-            Compromissos c = new Compromissos();
 
-            c.setId(cursor.getInt(cursor.getInt(Integer.parseInt("id"))));
-            c.setNome(cursor.getString(cursor.getColumnIndex("nome")));
-            c.setData(cursor.getString(cursor.getColumnIndex("data")));
-            c.setHora(cursor.getString(cursor.getColumnIndex("hora")));
-            c.setObs(cursor.getString(cursor.getColumnIndex("obs")));
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                Compromissos c = new Compromissos();
 
-            compromissos.add(c);
-            cursor.moveToNext();
+                c.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                c.setNome(cursor.getString(cursor.getColumnIndex("nome")));
+                c.setData(cursor.getString(cursor.getColumnIndex("data")));
+                c.setHora(cursor.getString(cursor.getColumnIndex("hora")));
+                c.setObs(cursor.getString(cursor.getColumnIndex("obs")));
+
+                compromissos.add(c);
+            } while (cursor.moveToNext());
         }
-        cursor.close();
+
+        if (cursor != null) {
+            cursor.close();
+        }
         close();
         return compromissos;
     }

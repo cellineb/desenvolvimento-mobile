@@ -146,7 +146,7 @@ public class CompromissosFragment extends Fragment {
     }
 
     private void preencheCampos(Compromissos compromisso) {
-        etIdC.setText(compromisso.getId());
+        etIdC.setText(String.valueOf(compromisso.getId()));
         etNomeC.setText(compromisso.getNome());
         etDataC.setText(String.valueOf(compromisso.getData()));
         etHoraC.setText(compromisso.getHora());

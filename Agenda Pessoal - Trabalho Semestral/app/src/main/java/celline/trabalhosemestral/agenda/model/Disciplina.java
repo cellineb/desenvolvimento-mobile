@@ -1,5 +1,7 @@
 package celline.trabalhosemestral.agenda.model;
 
+import android.util.Log;
+
 public class Disciplina {
     private int id;
     private String nome;
@@ -10,6 +12,7 @@ public class Disciplina {
     }
 
     public int getId() {
+        Log.i("MainActivity", "pegou o id");
         return id;
     }
     public void setId(int id) {
@@ -17,6 +20,7 @@ public class Disciplina {
     }
 
     public String getNome() {
+        Log.i("MainActivity", "pegou o nome");
         return nome;
     }
     public void setNome(String nome) {
@@ -25,6 +29,6 @@ public class Disciplina {
 
     @Override
     public String toString() {
-        return getId() + "-" + getNome();
+        return getId() + " - " + getNome() + "\n";
     }
 }

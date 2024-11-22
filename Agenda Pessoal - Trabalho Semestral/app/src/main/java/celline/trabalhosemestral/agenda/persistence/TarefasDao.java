@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import celline.trabalhosemestral.agenda.model.Disciplina;
 import celline.trabalhosemestral.agenda.model.Tarefas;
 
 public class TarefasDao implements ITarefasDao, ICRUDDao<Tarefas> {
@@ -69,7 +70,7 @@ public class TarefasDao implements ITarefasDao, ICRUDDao<Tarefas> {
         }
         if (!cursor.isAfterLast()){
 
-            tarefas.setId(cursor.getInt(cursor.getInt(Integer.parseInt("id"))));
+            tarefas.setId(cursor.getInt(cursor.getColumnIndex("id")));
             tarefas.setNome(cursor.getString(cursor.getColumnIndex("nome")));
             tarefas.setData(cursor.getString(cursor.getColumnIndex("data")));
             tarefas.setHora(cursor.getString(cursor.getColumnIndex("hora")));
@@ -85,27 +86,37 @@ public class TarefasDao implements ITarefasDao, ICRUDDao<Tarefas> {
     public List<Tarefas> findAll() throws SQLException {
         open();
         List<Tarefas> tarefas = new ArrayList<>();
-        String sql = "SELECT * FROM tarefas";
+        String sql = "SELECT d.id AS id_disciplina, d.nome AS nome_disciplina, t.* " +
+                "FROM disciplinas d, tarefas t " +
+                "WHERE d.id = t.idDisciplina";
         Cursor cursor = database.rawQuery(sql, null);
-        if (cursor != null){
-            cursor.moveToFirst();
-        }
-        if (!cursor.isAfterLast()){
-            Tarefas t = new Tarefas();
 
-            t.setId(cursor.getInt(cursor.getInt(Integer.parseInt("id"))));
-            t.setNome(cursor.getString(cursor.getColumnIndex("nome")));
-            t.setData(cursor.getString(cursor.getColumnIndex("data")));
-            t.setHora(cursor.getString(cursor.getColumnIndex("hora")));
-            t.setTipoTarefa(cursor.getString(cursor.getColumnIndex("tipoTarefa")));
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                Tarefas t = new Tarefas();
+                Disciplina disciplina = new Disciplina();
 
-            tarefas.add(t);
-            cursor.moveToNext();
+                disciplina.setId(cursor.getInt(cursor.getColumnIndex("id_disciplina")));
+                disciplina.setNome(cursor.getString(cursor.getColumnIndex("nome_disciplina")));
+
+                t.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                t.setNome(cursor.getString(cursor.getColumnIndex("nome")));
+                t.setData(cursor.getString(cursor.getColumnIndex("data")));
+                t.setHora(cursor.getString(cursor.getColumnIndex("hora")));
+                t.setTipoTarefa(cursor.getString(cursor.getColumnIndex("tipoTarefa")));
+                t.setDisciplina(disciplina);
+
+                tarefas.add(t);
+            } while (cursor.moveToNext());
         }
-        cursor.close();
+
+        if (cursor != null) {
+            cursor.close();
+        }
         close();
         return tarefas;
     }
+
 
     private ContentValues getContentValues(Tarefas tarefas) {
         ContentValues contentValues = new ContentValues();
@@ -114,6 +125,7 @@ public class TarefasDao implements ITarefasDao, ICRUDDao<Tarefas> {
         contentValues.put("data", String.valueOf(tarefas.getData()));
         contentValues.put("hora", tarefas.getHora());
         contentValues.put("tipoTarefa", tarefas.getTipoTarefa());
+        contentValues.put("idDisciplina", tarefas.getDisciplina().getId());
 
         return contentValues;
     }

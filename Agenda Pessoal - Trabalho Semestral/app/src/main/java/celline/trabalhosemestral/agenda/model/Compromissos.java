@@ -53,12 +53,10 @@ public class Compromissos {
 
     @Override
     public String toString() {
-        return "Compromissos{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", data=" + data +
-                ", hora='" + hora + '\'' +
-                ", obs='" + obs + '\'' +
-                '}';
+        return  "id = " + getId() +
+                "\nnome = " + getNome() +
+                "\ndata = " + getData() +
+                "\nhora = " + getHora() +
+                "\nobs = " + getObs() + "\n";
     }
 }

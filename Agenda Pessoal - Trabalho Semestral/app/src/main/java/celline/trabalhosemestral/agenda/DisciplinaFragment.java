@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +18,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 import celline.trabalhosemestral.agenda.controller.DisciplinaController;
-import celline.trabalhosemestral.agenda.controller.TarefasController;
-import celline.trabalhosemestral.agenda.model.Compromissos;
 import celline.trabalhosemestral.agenda.model.Disciplina;
-import celline.trabalhosemestral.agenda.model.Tarefas;
 import celline.trabalhosemestral.agenda.persistence.DisciplinasDao;
-import celline.trabalhosemestral.agenda.persistence.TarefasDao;
 
 public class DisciplinaFragment extends Fragment {
 
@@ -47,6 +44,7 @@ public class DisciplinaFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_disciplina, container, false);
 
         etIdD = view.findViewById(R.id.etIdD);
+        Log.i("MainActivity", "id encontrado");
         etNomeD = view.findViewById(R.id.etNomeD);
         tvSaidaD = view.findViewById(R.id.tvSaidaD);
         tvSaidaD.setMovementMethod(new ScrollingMovementMethod());
@@ -69,19 +67,24 @@ public class DisciplinaFragment extends Fragment {
 
     private void inserir() {
         Disciplina disciplina = new Disciplina();
+        disciplina = montaDisciplina();
         try {
             dCont.inserir(disciplina);
+            Log.i("MainActivity", "inserido");
             Toast.makeText(view.getContext(), "Disciplina Cadastrada com Sucesso!", Toast.LENGTH_LONG).show();
         } catch (SQLException e) {
             Toast.makeText(view.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+            Log.i("MainActivity", "erro");
         }
         limpaCampos();
     }
 
     private void editar() {
         Disciplina disciplina = new Disciplina();
+        disciplina = montaDisciplina();
         try {
             dCont.editar(disciplina);
+            Log.i("MainActivity", "editada");
             Toast.makeText(view.getContext(), "Disciplina Editada com Sucesso!", Toast.LENGTH_LONG).show();
         } catch (SQLException e) {
             Toast.makeText(view.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
@@ -91,8 +94,10 @@ public class DisciplinaFragment extends Fragment {
 
     private void excluir() {
         Disciplina disciplina = new Disciplina();
+        disciplina = montaDisciplina();
         try {
             dCont.excluir(disciplina);
+            Log.i("MainActivity", "excluida");
             Toast.makeText(view.getContext(), "Disciplina Excluída com Sucesso!", Toast.LENGTH_LONG).show();
         } catch (SQLException e) {
             Toast.makeText(view.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
@@ -122,6 +127,7 @@ public class DisciplinaFragment extends Fragment {
             for (Disciplina d : disciplinas){
                 buffer.append(d.toString() + "\n");
             }
+            Log.i("MainActivity", "lista");
             tvSaidaD.setText(buffer.toString());
         } catch (SQLException e) {
             Toast.makeText(view.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
@@ -137,7 +143,8 @@ public class DisciplinaFragment extends Fragment {
     }
 
     private void preencheCampos(Disciplina disciplina) {
-        etIdD.setText(disciplina.getId());
+        etIdD.setText(String.valueOf(disciplina.getId()));
+        Log.i("MainActivity", "pegar o nome");
         etNomeD.setText(disciplina.getNome());
     }
 
