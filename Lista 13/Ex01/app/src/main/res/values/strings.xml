@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">biblioteca</string>
+    <string name="nomeC">Celline Bitencourt de Souza</string>
+    <string name="RA">1110482313019</string>
+    <string name="exemplar">Cadastro de Exemplares</string>
+    <string name="codigo">Código</string>
+    <string name="nome">Nome</string>
+    <string name="paginas">Número de Páginas</string>
+    <string name="livro">Livro</string>
+    <string name="revista">Revista</string>
+    <string name="isbn">ISBN</string>
+    <string name="edicao">Edição</string>
+    <string name="issn">ISSN</string>
+    <string name="aluguel">Cadastro de Aluguel</string>
+    <string name="dataR">Data da Retirada</string>
+    <string name="dataD">Data da Devolução</string>
+    <string name="ra">RA</string>
+    <string name="email">Email</string>
+    <string name="buscar">Buscar</string>
+    <string name="inserir">Inserir</string>
+    <string name="editar">Editar</string>
+    <string name="excluir">Excluir</string>
+    <string name="listar">Listar</string>
+    <string name="aluno">Cadastro de Alunos</string>
+    <string name="selivro">Se for livro, digite as informações: </string>
+    <string name="serevista">Se for revista, digite as informações: </string>
+    <string name="tipo">Tipo do exemplar</string>
+</resources>

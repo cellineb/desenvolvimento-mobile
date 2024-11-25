@@ -135,12 +135,11 @@ public class TarefasFragment extends Fragment {
     }
 
     private void buscar() {
-        Tarefas tarefa = montaTarefa();
+        Tarefas tarefas = montaTarefa();
         try {
-            disciplinas = dCont.listar();
-            tarefa = tCont.buscar(tarefa);
-            if (tarefa.getNome() != null){
-                preencheCampos(tarefa);
+            tarefas = tCont.buscar(tarefas);
+            if (tarefas.getNome() != null){
+                preencheCampos(tarefas);
             } else {
                 Toast.makeText(view.getContext(), "Tarefa Não Encontrada :(", Toast.LENGTH_LONG).show();
                 limpaCampos();
