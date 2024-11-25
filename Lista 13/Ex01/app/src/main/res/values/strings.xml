@@ -25,4 +25,7 @@
     <string name="selivro">Se for livro, digite as informações: </string>
     <string name="serevista">Se for revista, digite as informações: </string>
     <string name="tipo">Tipo do exemplar</string>
+    <string name="titulo">App para Biblioteca</string>
+    <string name="escolha">No menu, escolha qual fragment quer entrar</string>
+    <string name="inicio">Tela Inicial</string>
 </resources>
